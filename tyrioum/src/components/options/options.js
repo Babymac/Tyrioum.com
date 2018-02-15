@@ -5,21 +5,29 @@ import React from 'react';
 //---------------------------------------
 
 const Options = props => {
-	let buttonStyle;
-	const label = `P tag?`;
+	let buttonPStyle;
+	let buttonHStyle;
+
 	const {
 		quotes,
 		addPTags,
+		addHTags,
 	} = props;
 
-	quotes.pTagState ? buttonStyle = 'optionsActive' : buttonStyle = 'optionsInactive';
+	quotes.pTagState ? buttonPStyle = 'optionsPActive' : buttonPStyle = 'optionsPInactive';
+	quotes.hTagState ? buttonHStyle = 'optionsHActive' : buttonHStyle = 'optionsHInactive';
 
 	return (
 		<div>
+			<label className="optionsLabel">Add a paragraph tag?</label>
 			<button
 				onClick={addPTags}
-				className={buttonStyle}
-			>{label}</button>
+				className={buttonPStyle}
+			>{'P tag?'}</button>
+{/*			<button
+				onClick={addHTags}
+				className={buttonHStyle}
+			>{'H tag?'}</button>*/}
 		</div>
 	);
 };

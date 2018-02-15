@@ -6,9 +6,9 @@ import {
 } from 'recompose';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-import { changePTagState, changeHTagState } from '../../reducers/quotes/quotes-actions';
+import { changeQuoteAmount } from '../../reducers/quotes/quotes-actions';
 
-import Options from './options';
+import Amount from './amount';
 //---------------------------------------
 // Imports and constants
 //---------------------------------------
@@ -19,23 +19,19 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-	const actions = bindActionCreators({ changePTagState, changeHTagState }, dispatch);
+	const actions = bindActionCreators({ changeQuoteAmount }, dispatch);
 	return {actions};
 }
 
-const OptionsContainer = compose(
+const AmountContainer = compose(
 	connect(mapStateToProps, mapDispatchToProps),
 	withHandlers({
-		addPTags: props => (e) => {
+		quoteAmount: props => (e) => {
 			e.preventDefault();
-			if (!props.quotes.quote) return; 
-			props.actions.changePTagState();
-		},
-		addHTags: props => (e) => {
-			e.preventDefault();
-			props.actions.changeHTagState();
+			console.log(e)
+			props.actions.changeQuoteAmount();
 		},
 	}),
-)(Options);
+)(Amount);
 
-export default OptionsContainer;
+export default AmountContainer;

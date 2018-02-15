@@ -13,9 +13,8 @@ body {
 	width:500px;
 	max-width:500px;
 	height:auto;
-	border:1px solid black;
-	margin-top:100px;
-
+	margin-top:200px;
+	margin-left:10%;
 }
 
 /*GENERATOR*/
@@ -59,12 +58,63 @@ body {
 }
 
 /*OPTIONS*/
-.optionsActive {
+.optionsLabel {
+	margin-right:10px;
+	margin-left:50px;
+	font-size:15px;
+	color:#fff;
+}
+
+.optionsPActive {
+	margin-bottom:15px;
 	background-color:green;
 	border-radius:5px;
 }
 
-.optionsInactive {
+.optionsPInactive {
+	margin-bottom:15px;
 	background-color:grey;
 	border-radius:5px;
+}
+
+.optionsHActive {
+	background-color:green;
+	border-radius:5px;
+}
+
+.optionsHInactive {
+	background-color:grey;
+	border-radius:5px;
+}
+
+/*EMPTY*/
+.emptyButton {
+	margin-bottom:10px;
+	background-color:grey;
+	border-radius:5px;
+}
+
+/*SOCIAL*/
+.socialLabel {
+	margin-top:10px;
+	text-align:center;
+	color:#fff;
+	font-size:18px;
+}
+
+.socialButton {
+	margin-top:10px;
+	margin-left:160px;
+	display:flex;
+}
+
+.eachButton {
+	margin-right:20px;
+}
+
+/*AMOUNT*/
+.amountInput {
+	width:60px;
+	font-size:15px;
+	border:1px solid grey;
 }

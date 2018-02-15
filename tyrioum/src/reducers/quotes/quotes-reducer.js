@@ -2,6 +2,7 @@ const initialState = {
 	quote: 'The Gods give with one hand and take with the other.',
 	numberOfQuotes: 1,
 	pTagState: false,
+	hTagState: false,
 };
 
 const quotes = (state = initialState, action) => {
@@ -18,6 +19,26 @@ const quotes = (state = initialState, action) => {
 			return {
 				...state,
 				pTagState: !state.pTagState
+			};
+
+		case 'CHANGE_H_TAG_STATE':
+			return {
+				...state,
+				hTagState: !state.hTagState
+			};
+
+		case 'REMOVE_QUOTES':
+			return {
+				...state,
+				quote: '',
+				pTagState: false,
+				hTagState: false,
+			};
+
+		case 'CHANGE_QUOTE_AMOUNT':
+			return {
+				...state,
+				numberOfQuotes: action.data,
 			};
 
 		default:

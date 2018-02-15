@@ -5,6 +5,9 @@ import React from 'react';
 //---------------------------------------
 
 const Quotebox = props => {
+	let tagOpen = '';
+	let tagClose = '';
+
 	const {
 		quotes,
 	} = props;
@@ -12,14 +15,20 @@ const Quotebox = props => {
 	const func = () => {
 	};
 
+	if (quotes.pTagState){
+		tagOpen = '<p>'
+		tagClose = '</p>'
+	}
+
 	return (
 		<div>
 			<textarea className="quotebox" onChange={func} value={
-`<!-- start Tyrioum code -->
-
+`${tagOpen}
 ${quotes.quote}
+${tagClose}
 
-<!-- end Tyrioum code -->`}>
+`
+			}>
 			</textarea>
 		</div>
 	);
